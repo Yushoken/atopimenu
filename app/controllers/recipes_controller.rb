@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   def index
     @recipes = Recipe.all
   end
@@ -26,6 +27,12 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.update(recipe_params)
     redirect_to recipe_path(@recipe)
+  end
+
+  def destory
+    recipe = Recipe.find(params[:id])
+    recipe.destory
+    redirect_to recipe_path
   end
 
   private
