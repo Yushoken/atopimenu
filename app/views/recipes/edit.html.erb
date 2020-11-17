@@ -3,11 +3,22 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        レシピ編集
+        レシピを編集する
       </h1>
     </div>
   </div>
 </section>
+
+<% if @recipe.errors.any? %>
+  <div class="notification is-danger">
+    <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+    <ul>
+      <% @recipe.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <section class="section">
   <div class="container">
@@ -20,12 +31,12 @@
         </div>
 
         <div class="field">   
-          <%= f.label :body, "作り方", class: "label" %>
+          <%= f.label :body, "作り方とポイント", class: "label" %>
           <%= f.text_area :body, class: "textarea" %>
         </div>
 
         <div class="field">   
-          <%= f.label :image, "写真", class: "label" %>
+          <%= f.label :image, "料理写真", class: "label" %>
           <%= f.attachment_field :image, class: "input" %>
         </div>
 

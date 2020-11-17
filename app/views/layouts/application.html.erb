@@ -24,10 +24,10 @@
     <% end %>
 
 
-    <nav class="navbar is-warning">
+    <nav class="navbar is-success">
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-item" do %>
-          <h1 class="title is-4" style="font-family: cursive;">アトピーお助けごはんレシピ</h1>
+          <h1 class="title is-4" style="font-family: cursive;">安心できる食材、調理法、だから続けられる。みんなでアトピーで苦しむ人を助けよう！</h1>
         <% end %>
         <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
           <span></span>
@@ -39,7 +39,7 @@
     <% if user_signed_in? %>
       <div id="navbarExampleTransparentExample" class="navbar-menu">
         <div class="navbar-item">
-          <%= link_to "レシピ一覧", recipes_path, class: "navbar-item button is-warning is-light" %>
+          <%= link_to "お助けレシピ一覧", recipes_path, class: "navbar-item button is-warning is-light" %>
         </div>
         <div class="navbar-item">
           <%= link_to "新規投稿", new_recipe_path, class: "navbar-item button is-warning is-light" %>
@@ -48,7 +48,7 @@
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
-                <%= link_to "お助けレシピ提供者一覧", users_path, class: "button is-warning is-light" %>
+                <%= link_to "お助けレシピ提供者の皆さん", users_path, class: "button is-warning is-light" %>
               </p>
               <p class="control">     
                 <%= link_to "マイページ", user_path(current_user), class: "button is-warning is-light" %>
@@ -63,10 +63,10 @@
     <% else %>
       <div id="navbarExampleTransparentExample" class="navbar-menu">
         <div class="navbar-item">
-          <%= link_to "レシピ一覧", recipes_path, class: "navbar-item button is-warning is-light" %>
+          <%= link_to "お助けレシピ一覧", recipes_path, class: "navbar-item button is-warning is-light" %>
         </div>
         <div class="navbar-item">
-          <%= link_to "お助けレシピ提供者一覧", users_path, class: "navbar-item button is-warning is-light" %>
+          <%= link_to "お助けレシピ提供者の皆さん", users_path, class: "navbar-item button is-warning is-light" %>
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
